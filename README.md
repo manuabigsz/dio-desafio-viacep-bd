@@ -1,16 +1,10 @@
-# desafio_consome_cep
+Projeto com o intuito de resolver o desafio proposto no Santander BootCamp.
 
-A new Flutter project.
+Checklist do Desafio
+Criar uma aplicação Flutter​
 
-## Getting Started
+Criar uma classe de CEP no Back4App​
 
-This project is a starting point for a Flutter application.
+Consulte um Cep no ViaCep, após retornado se não existir no Back4App, realizar o cadastro​
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Listar os CEPs cadastrados em forma de lista, possibilitando a alteração e exclusão do CEP​
