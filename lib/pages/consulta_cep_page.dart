@@ -156,6 +156,7 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
     );
   }
 
+// Dentro da função buildCEPDataTable
   Widget buildCEPDataTable() {
     return DataTable(
       columns: [
@@ -164,20 +165,37 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
         DataColumn(label: Text('UF')),
         DataColumn(label: Text('Logradouro')),
         DataColumn(label: Text('Bairro')),
+        DataColumn(label: Text('Ações')),
       ],
-      rows: cepsList
-          .map(
-            (cep) => DataRow(
-              cells: [
-                DataCell(Text(cep.cep ?? '')),
-                DataCell(Text(cep.localidade ?? '')),
-                DataCell(Text(cep.uf ?? '')),
-                DataCell(Text(cep.logradouro ?? '')),
-                DataCell(Text(cep.bairro ?? '')),
-              ],
-            ),
-          )
-          .toList(),
+      rows: cepsList.asMap().entries.map(
+        (entry) {
+          final index = entry.key;
+          final cep = entry.value;
+
+          return DataRow(
+            cells: [
+              DataCell(Text(cep.cep ?? '')),
+              DataCell(Text(cep.localidade ?? '')),
+              DataCell(Text(cep.uf ?? '')),
+              DataCell(Text(cep.logradouro ?? '')),
+              DataCell(Text(cep.bairro ?? '')),
+              DataCell(
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      cepsList.removeAt(index);
+                    });
+                  },
+                  child: Text('Remover'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      ).toList(),
     );
   }
 
